@@ -9,10 +9,10 @@ android:
     # Uncomment the lines below if you want to
     # use the latest revision of Android SDK Tools
     # The BuildTools version used by your project
-    - build-tools-21.1.2
+    - build-tools-25.0.0
 
     # The SDK version used to compile your project
-    - android-22
+    - android-25
 
 notifications:
   email: true
@@ -37,7 +37,7 @@ install:
 #  - mv app/gradle.properties
 
 script:
-  - gradlew assembleRelease
+  - ./gradlew assembleRelease
 
 deploy:
   # Deploy the file(s) to the github release (other targets like amazon-aws or npm can be found here: http://docs.travis-ci.com/user/deployment/ )
