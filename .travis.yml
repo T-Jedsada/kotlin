@@ -41,6 +41,9 @@ script:
 
 deploy:
       provider: releases
-      api_key: "f9611c7f8699b96b6a6491cd75fd7a3d4161c622 "
+      api_key: ${api_key}
       file: "app/build/outputs/apk/app-release.apk"
       skip_cleanup: true
+      on:
+        all_branches: true
+        tags: true
