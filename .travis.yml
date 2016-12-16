@@ -1,0 +1,48 @@
+language: android
+
+branches:
+  only:
+    - master
+
+android:
+  components:
+    # Uncomment the lines below if you want to
+    # use the latest revision of Android SDK Tools
+    # The BuildTools version used by your project
+    - build-tools-21.1.2
+
+    # The SDK version used to compile your project
+    - android-22
+
+notifications:
+  email: true
+
+before_install:
+  # Disable services enabled by default
+  # http://docs.travis-ci.com/user/database-setup/#MySQL
+  - sudo /etc/init.d/mysql stop
+  - sudo /etc/init.d/postgresql stop
+  # The following did not work reliable
+  # - sudo service mysql stop
+  # - sudo service postgresql stop
+
+install:
+  # Ensure Gradle wrapper is executable, download wrapper and show version
+  - chmod +x ./gradlew; ls -l gradlew; ./gradlew wrapper -v
+  # Download and show android dependencies
+  # - ./gradlew androidDependencies
+
+#before_script:
+#  # Ensure signing configuration is present
+#  - mv app/gradle.properties
+
+script:
+  - ./gradlew assembleRelease
+
+deploy:
+  # Deploy the file(s) to the github release (other targets like amazon-aws or npm can be found here: http://docs.travis-ci.com/user/deployment/ )
+    provider: releases
+    user: "T-Jedsada"
+    password: "55021744pond"
+    file: "app/build/outputs/apk/app-release.apk"
+    skip_cleanup: true
