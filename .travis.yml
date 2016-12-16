@@ -37,7 +37,7 @@ install:
 #  - mv app/gradle.properties
 
 script:
-  - ./gradlew assembleRelease
+  - gradlew assembleRelease
 
 deploy:
   # Deploy the file(s) to the github release (other targets like amazon-aws or npm can be found here: http://docs.travis-ci.com/user/deployment/ )
