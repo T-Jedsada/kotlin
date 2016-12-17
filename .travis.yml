@@ -4,6 +4,10 @@ branches:
   only:
     - master
 
+notifications:
+  email:
+    - pondthaitay@gmail.com
+
 android:
   components:
     # Uncomment the lines below if you want to
@@ -54,7 +58,3 @@ deploy:
       on:
           tags: true
           all_branches: false
-
-notifications:
-  email:
-    - pondthaitay@gmail.com
