@@ -45,6 +45,3 @@ deploy:
       api_key: ${api_key}
       file: "app/build/outputs/apk/app-release.apk"
       skip_cleanup: true
-      on:
-          tags: true
-          all_branches: true
