@@ -18,6 +18,9 @@ android:
     # The SDK version used to compile your project
     - android-22
 
+notifications:
+  email: true
+
 before_install:
   # Disable services enabled by default
   # http://docs.travis-ci.com/user/database-setup/#MySQL
@@ -40,7 +43,7 @@ install:
 script:
   - ./gradlew assembleRelease
 
-before_deploy: "echo 'ready to deploy?'"
+before_deploy:
   # CREATE GIT TAG
   - git config --global user.email "jedsada@wisdomlanna.com"
   - git config --global user.name "T-Jedsada"
