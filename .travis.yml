@@ -46,6 +46,6 @@ deploy:
       file: "app/build/outputs/apk/app-release.apk"
       skip_cleanup: true
       tag: "v1.0.1"
-      on:
-          branch: master
-          node: '0.11' # this should be quoted; otherwise, 0.10 would not work
+#      on:
+#          branch: master
+#          node: '0.11' # this should be quoted; otherwise, 0.10 would not work
