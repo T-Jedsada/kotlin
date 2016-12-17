@@ -48,7 +48,7 @@ deploy:
           tags: false
           all_branches: true
 
-before_deploy:
+after_success:
   # CREATE GIT TAG
   - git config --global user.email "jedsada@wisdomlanna.com"
   - git config --global user.name "T-Jedsada"
@@ -64,4 +64,4 @@ before_deploy:
 
 branches:
   except:
-    - /^*-v[0-9]/
+    - /build-.+-\d{4}-\d{2}-\d{2}-.*/
