@@ -3,10 +3,10 @@ language: android
 branches:
   only:
     - master
-
-notifications:
-  email:
-    - pondthaitay@gmail.com
+#
+#notifications:
+#  email:
+#    - pondthaitay@gmail.com
 
 android:
   components:
