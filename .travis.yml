@@ -52,9 +52,8 @@ deploy:
 before_deploy:
     - git config --global user.email "jedsada@wisdomlanna.com"
     - git config --global user.name "T-Jedsada"
-    - export GIT_TAG=build-$TRAVIS_BRANCH-$(date -u "+%Y-%m-%d-%H-%M-%S")-$TRAVIS_BUILD_NUMBER
-    - git tag "1.0.10" -a -m "Generated tag from TravisCI build $TRAVIS_BUILD_NUMBER"
-    - git push origin "1.0.10"
+    - git tag 1.0.9 -a -m "Generated tag from TravisCI build $TRAVIS_BUILD_NUMBER"
+    - git push origin 1.0.9
 
 branches:
   except:
