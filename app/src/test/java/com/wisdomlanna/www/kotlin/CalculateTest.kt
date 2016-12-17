@@ -9,6 +9,6 @@ import org.junit.Test
 class CalculateTest {
     @Test
     fun plus() {
-        assertEquals(95, Calculate.plus(5, 90))
+        assertEquals(90, Calculate.plus(5, 90))
     }
 }
