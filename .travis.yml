@@ -42,7 +42,7 @@ install:
 
 script:
   - ./gradlew test
-  - ./gradlew assembleRelease
+#  - ./gradlew assembleRelease
 
 #after_success:
 #  # CREATE GIT TAG
@@ -53,11 +53,11 @@ script:
 #  - git push --tags
 #  - ls -R
 
-deploy:
-      provider: releases
-      api_key: ${api_key}
-      file: "app/build/outputs/apk/app-release.apk"
-      skip_cleanup: true
-      on:
-          tags: false
-          all_branches: true
+#deploy:
+#      provider: releases
+#      api_key: ${api_key}
+#      file: "app/build/outputs/apk/app-release.apk"
+#      skip_cleanup: true
+#      on:
+#          tags: false
+#          all_branches: true
