@@ -44,14 +44,13 @@ script:
   - ./gradlew test
   - ./gradlew assembleRelease
 
-deploy_sucess:
+after_success:
   # CREATE GIT TAG
   - git config --global user.email "jedsada@wisdomlanna.com"
   - git config --global user.name "T-Jedsada"
   - export GIT_TAG=build-$TRAVIS_BRANCH-$(date -u "+%Y-%m-%d")-$TRAVIS_BUILD_NUMBER
-  - git commit -m "Set build VERSION number"
-  - git tag v1.0.14 -a -m "Generated tag from TravisCI build $TRAVIS_BUILD_NUMBER"
-  - git push -q --tags
+  - git tag v1.0.14
+  - git push --tags
   - ls -R
 
 deploy:
