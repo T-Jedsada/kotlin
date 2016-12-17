@@ -41,9 +41,10 @@ install:
 #  - mv app/gradle.properties
 
 script:
+  - ./gradlew test
   - ./gradlew assembleRelease
 
-before_deploy:
+deploy_sucess:
   # CREATE GIT TAG
   - git config --global user.email "jedsada@wisdomlanna.com"
   - git config --global user.name "T-Jedsada"
