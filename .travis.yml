@@ -45,4 +45,19 @@ deploy:
       api_key: ${api_key}
       file: "app/build/outputs/apk/app-release.apk"
       skip_cleanup: true
+      on:
+          tags: false
+          all_branches: true
+
+before_deploy:
+    - git config --global user.email "jedsada@wisdomlanna.com"
+    - git config --global user.name "T-Jedsada"
+    - export GIT_TAG=build-$TRAVIS_BRANCH-$(date -u "+%Y-%m-%d-%H-%M-%S")-$TRAVIS_BUILD_NUMBER
+    - git tag $GIT_TAG -a -m "Generated tag from TravisCI build $TRAVIS_BUILD_NUMBER"
+    - git push origin $GIT_TAG
+
+branches:
+  except:
+    - /^*-v[0-9]/
+
 
